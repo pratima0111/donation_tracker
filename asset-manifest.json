@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/donation_tracker/static/css/main.b1ddf664.css",
+    "main.js": "/donation_tracker/static/js/main.8e4aa39c.js",
+    "static/js/787.fdd10de7.chunk.js": "/donation_tracker/static/js/787.fdd10de7.chunk.js",
+    "index.html": "/donation_tracker/index.html",
+    "main.b1ddf664.css.map": "/donation_tracker/static/css/main.b1ddf664.css.map",
+    "main.8e4aa39c.js.map": "/donation_tracker/static/js/main.8e4aa39c.js.map",
+    "787.fdd10de7.chunk.js.map": "/donation_tracker/static/js/787.fdd10de7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1ddf664.css",
+    "static/js/main.8e4aa39c.js"
+  ]
+}
