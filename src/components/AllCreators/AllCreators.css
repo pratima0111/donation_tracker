@@ -1,0 +1,59 @@
+.grid { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    align-items: center;
+    }
+
+.all-creators {   
+    margin: 4rem 5px 2rem 5px;
+    align-items: center;
+    }
+
+.nameDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.topbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    border-bottom: 1px solid #a3a2a2;
+    padding-bottom:5px;
+}
+
+.modaltitle{
+    display:flex;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: auto 0 auto 10px;
+   
+}
+
+.userName{
+    margin-right: 4px;
+}
+
+.backIcon{
+    border-radius: 50%;
+}
+
+.amountdiv{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding:0;
+}
+
+.submitbutton{
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bottomdiv{
+    display: flex;
+    justify-content: center;
+}
