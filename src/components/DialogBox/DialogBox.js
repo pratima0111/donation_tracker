@@ -28,13 +28,12 @@ export default function DialogBox({ creator, open, handleOpen, handleClose }) {
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    console.log(amount);
-
     if (amount > 0) {
       setBtnDisabled(false);
     } else {
       setBtnDisabled(true);
     }
+
   }, [amount]);
 
   const handleAmountChange = (event) => {
@@ -48,9 +47,10 @@ export default function DialogBox({ creator, open, handleOpen, handleClose }) {
     setMsg(event.target.value);
   };
 
-  const handleSubmit = () => {
-    console.log(amount, name, msg, creator);
+  const handleSubmit = (event) => {
+    event.preventDefault();
   };
+
 
   return (
     <div>
@@ -75,8 +75,7 @@ export default function DialogBox({ creator, open, handleOpen, handleClose }) {
               Send your love to {creator.userName} to become a real fan.
             </DialogContentText>
 
-            <FormControl fullWidth>
-              <Box component="form" noValidate sx={{ mt: 3 }}>
+              <Box component="form" noValidate sx={{ mt: 3 }} onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <OutlinedInput
@@ -84,6 +83,7 @@ export default function DialogBox({ creator, open, handleOpen, handleClose }) {
                       type="number"
                       required
                       fullWidth
+                      name="amount"
                       value={amount}
                       onChange={handleAmountChange}
                       startAdornment={
@@ -104,6 +104,7 @@ export default function DialogBox({ creator, open, handleOpen, handleClose }) {
                     <TextField
                       id="outlined-multiline-static"
                       label="Say something nice...(optional)"
+                      name="msg"
                       multiline
                       rows={4}
                       fullWidth
@@ -112,26 +113,11 @@ export default function DialogBox({ creator, open, handleOpen, handleClose }) {
                   </Grid>
                 </Grid>
               </Box>
-            </FormControl>
-          </DialogContent>
-          <DialogActions
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "0",
-            }}
-          >
-            <Button
-              disabled={btnDisabled}
-              variant="contained"
-              className="submitbutton"
-              onClick={handleSubmit}
-            >
-              {" "}
-              <div className="amountdiv">Support ${amount}</div>
-            </Button>
-          </DialogActions>
-        </Dialog>
+              </DialogContent>
+              <DialogActions style={{display:"flex", justifyContent:"center", marginBottom:"0"}}>
+              <Button  disabled={btnDisabled} variant="contained" className="submitbutton" onClick={handleSubmit}> <div className="amountdiv">Support ${amount}</div></Button>
+            </DialogActions>
+        </Dialog>      
       </ThemeProvider>
     </div>
   );
